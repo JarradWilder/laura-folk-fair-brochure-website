@@ -1,0 +1,421 @@
+/* Laura Folk Fair - Enhanced Styling inspired by Aussie World */
+
+/* Color Palette - Laura Folk Fair Colors */
+:root {
+    --primary-blue: #2596BE;
+    --primary-blue-dark: #183552;
+    --primary-blue-light: #4AB3D6;
+    --accent-orange: #E16900;
+    --accent-orange-dark: #C55A00;
+    --accent-yellow: #EFCA08;
+    --accent-yellow-dark: #D4B507;
+    --bg-cream: #EDE5BD;
+    --text-dark: #183552;
+    --text-gray: #4a4a4a;
+    --bg-light: #F8F9FA;
+    --white: #FFFFFF;
+}
+
+/* Enhanced Typography - Aussie World Inspired */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+}
+
+h2 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+}
+
+h3 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Ensure all sections can show waves */
+section {
+    position: relative;
+}
+
+/* Hero Sections - Bold and Vibrant - Full Viewport */
+.hero-gradient {
+    background: #2596BE;
+    position: relative;
+    overflow: visible;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Full Viewport Sections */
+.section-full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.section-tall {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* Buttons - Bold and Energetic - Larger, More Prominent */
+.btn-primary {
+    background: #E16900;
+    color: white;
+    font-weight: 800;
+    padding: 1.25rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(225, 105, 0, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(225, 105, 0, 0.6);
+    background: #C55A00;
+}
+
+.btn-secondary {
+    background: white;
+    color: #2596BE;
+    font-weight: 800;
+    padding: 1.25rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    background: #f8f9fa;
+}
+
+/* Cards - Enhanced with better shadows and hover effects - More Padding */
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 2.5rem;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Section Backgrounds */
+.section-alt {
+    background: #EDE5BD;
+}
+
+/* Navigation - Enhanced */
+.nav-enhanced {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    overflow: visible;
+    min-height: 80px;
+}
+
+.nav-enhanced .flex.items-center {
+    position: relative;
+    z-index: 100;
+}
+
+.nav-enhanced img {
+    position: relative;
+    z-index: 100;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #E16900;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Accent Colors */
+.accent-orange {
+    color: #E16900;
+}
+
+.accent-yellow {
+    color: #EFCA08;
+}
+
+.accent-blue {
+    color: #2596BE;
+}
+
+/* Text Gradients */
+.text-gradient {
+    color: #2596BE;
+}
+
+/* Badge/Pill Styles */
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-orange {
+    background: #E16900;
+    color: white;
+}
+
+.badge-yellow {
+    background: #EFCA08;
+    color: #183552;
+}
+
+.badge-blue {
+    background: #2596BE;
+    color: white;
+}
+
+/* Stats/Numbers - Bold Display - Larger */
+.stat-number {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 900;
+    color: #2596BE;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Footer - Enhanced */
+.footer-enhanced {
+    background: #183552;
+    position: relative;
+    overflow: visible;
+}
+
+/* Footer top wave - convex curve (bulges upward, matching previous section) */
+/* Footer comes after gray-50 section, so wave should be gray-50 to match previous section */
+/* Convex curve: starts at top, bulges upward in middle, returns to top */
+.footer-enhanced.wave-divider-top::before {
+    height: 100px;
+    min-height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L0,50 Q360,100 720,50 T1440,50 L1440,100 Z' fill='%23f9fafb'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* If footer comes after white section, wave should be white */
+section.bg-white + .footer-enhanced.wave-divider-top::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L0,50 Q360,100 720,50 T1440,50 L1440,100 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* If footer comes after cream section, wave should be cream */
+section.bg-lff-cream + .footer-enhanced.wave-divider-top::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L0,50 Q360,100 720,50 T1440,50 L1440,100 Z' fill='%23EDE5BD'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Icon Enhancements - Larger */
+.icon-large {
+    font-size: 5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Section Spacing - Generous Padding */
+.section-spacing {
+    padding: 8rem 0;
+    position: relative;
+    overflow: visible;
+}
+
+@media (min-width: 768px) {
+    .section-spacing {
+        padding: 10rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-spacing {
+        padding: 12rem 0;
+    }
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.875rem 2rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Animation Utilities */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Decorative Elements - Wave Dividers */
+.wave-divider {
+    position: relative;
+    overflow: visible !important;
+}
+
+.wave-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: bottom center;
+    z-index: 10;
+    pointer-events: none;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Cream section wave divider */
+.bg-lff-cream.wave-divider::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23EDE5BD'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Hero section specific - convex curve at bottom (bulges downward) */
+.hero-gradient.wave-divider::after {
+    height: 100px;
+    min-height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L0,0 Q360,100 720,50 T1440,50 L1440,100 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Top wave - reversed */
+.wave-divider-top {
+    position: relative;
+    overflow: visible !important;
+}
+
+.wave-divider-top::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,40 Q360,80 720,40 T1440,40 L1440,0 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+    z-index: 10;
+    pointer-events: none;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Wave colors - bottom waves match NEXT section, top waves match PREVIOUS section */
+/* White sections - top wave matches previous (white/cream), bottom wave matches next */
+.bg-white.wave-divider-top::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,40 Q360,80 720,40 T1440,40 L1440,0 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* White -> Cream: bottom wave = cream */
+.bg-white.wave-divider::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23EDE5BD'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* White -> Gray: override for white sections followed by gray */
+.bg-white.wave-divider:has(+ .bg-gray-50)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23f9fafb'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Gray sections - top wave matches previous (white), bottom wave matches next (white) */
+.bg-gray-50.wave-divider-top::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,40 Q360,80 720,40 T1440,40 L1440,0 Z' fill='%23f9fafb'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+.bg-gray-50.wave-divider::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Cream sections - top wave matches previous (white), bottom wave matches next (white) */
+.bg-lff-cream.wave-divider-top::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,40 Q360,80 720,40 T1440,40 L1440,0 Z' fill='%23EDE5BD'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+.bg-lff-cream.wave-divider::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,80 L0,40 Q360,0 720,40 T1440,40 L1440,80 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Hero section - bottom wave should be white (next section is white) */
+.hero-gradient.wave-divider::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L0,0 Q360,100 720,50 T1440,50 L1440,100 Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") !important;
+}

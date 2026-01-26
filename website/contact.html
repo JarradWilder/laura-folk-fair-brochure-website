@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Laura Folk Fair team. Get in touch for stallholder applications, sponsorship inquiries, volunteer opportunities, and general questions.">
+    <meta name="keywords" content="Laura Folk Fair contact, stallholder application, sponsorship inquiry, volunteer Laura SA">
+    <title>Contact Us - Laura Folk Fair 2026 | Laura SA</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.laurafolkfair.org.au/contact.html">
+    <meta property="og:title" content="Contact Us - Laura Folk Fair 2026">
+    
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <link rel="canonical" href="https://www.laurafolkfair.org.au/contact.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lff-blue': '#2596BE',
+                        'lff-blue-dark': '#183552',
+                        'lff-orange': '#E16900',
+                        'lff-yellow': '#EFCA08',
+                        'lff-cream': '#EDE5BD',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    
+    <!-- Load Header and Footer -->
+    <script src="load-header-footer.js" defer></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header placeholder (loaded via JavaScript) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white wave-divider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="mb-6">CONTACT US</h1>
+            <p class="text-2xl md:text-3xl font-bold">Get in touch with the Laura Folk Fair team</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="section-tall bg-white wave-divider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-lff-blue-50 border-l-4 border-lff-blue-500 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <span class="material-icons text-lff-blue mr-2">email</span>
+                        General Inquiries
+                    </h3>
+                    <p class="text-gray-700 mb-2">Email us at:</p>
+                    <a href="mailto:admin@laurafolkfair.org.au" class="text-lff-blue hover:underline text-lg font-semibold">admin@laurafolkfair.org.au</a>
+                </div>
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <span class="material-icons text-green-600 mr-2">location_on</span>
+                        Event Location
+                    </h3>
+                    <p class="text-gray-700">Herbert Street, Laura SA 5480</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section-tall bg-gray-50 wave-divider-top wave-divider" style="padding-bottom: 10rem;">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Send Us a Message</h2>
+            <form action="mailto:admin@laurafolkfair.org.au" method="post" enctype="text/plain" class="bg-white p-8 rounded-lg shadow-md">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject <span class="text-red-500">*</span></label>
+                    <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Please select a subject</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Stallholder Application">Stallholder Application</option>
+                        <option value="Sponsorship Inquiry">Sponsorship Inquiry</option>
+                        <option value="Volunteer Interest">Volunteer Interest</option>
+                        <option value="Media Inquiry">Media Inquiry</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message <span class="text-red-500">*</span></label>
+                    <textarea id="message" name="message" rows="6" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-lff-blue-600 hover:bg-lff-blue-700 text-white font-bold py-3 px-8 rounded-lg transition shadow-lg">Send Message</button>
+                </div>
+            </form>
+            
+            <p class="text-center text-gray-600 mt-6">We aim to respond to all inquiries within 2-3 business days. Thank you for your patience!</p>
+        </div>
+    </section>
+
+    <!-- Contact Reasons -->
+    <section class="section-tall bg-white wave-divider-top wave-divider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What can we help you with?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <span class="material-icons text-5xl mb-4 text-lff-blue">store</span>
+                    <h3 class="font-bold text-gray-900 mb-3">Stallholder Applications</h3>
+                    <p class="text-sm text-gray-600">Interested in becoming a stallholder? Contact us for application details.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <span class="material-icons text-5xl mb-4 text-lff-blue">handshake</span>
+                    <h3 class="font-bold text-gray-900 mb-3">Sponsorship Opportunities</h3>
+                    <p class="text-sm text-gray-600">Learn about sponsorship packages and benefits.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <span class="material-icons text-5xl mb-4 text-lff-blue">groups</span>
+                    <h3 class="font-bold text-gray-900 mb-3">Volunteer Information</h3>
+                    <p class="text-sm text-gray-600">Join our amazing team of volunteers.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <span class="material-icons text-5xl mb-4 text-lff-blue">help_outline</span>
+                    <h3 class="font-bold text-gray-900 mb-3">General Questions</h3>
+                    <p class="text-sm text-gray-600">Have a question? We're here to help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder (loaded via JavaScript) -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Pre-fill subject from URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subject = urlParams.get('subject');
+            if (subject) {
+                const subjectSelect = document.getElementById('subject');
+                if (subjectSelect) {
+                    const optionValue = subject.charAt(0).toUpperCase() + subject.slice(1);
+                    if (optionValue === 'Stallholder') {
+                        subjectSelect.value = 'Stallholder Application';
+                    } else if (optionValue === 'Sponsorship') {
+                        subjectSelect.value = 'Sponsorship Inquiry';
+                    } else if (optionValue === 'Volunteer') {
+                        subjectSelect.value = 'Volunteer Interest';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

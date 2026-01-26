@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Always use context 7 library tailwindcss.com/docs for frontend styling
