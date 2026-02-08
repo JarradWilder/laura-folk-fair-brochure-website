@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
-/* Custom theme configuration for Tailwind v4 */
+/* Custom theme configuration for Tailwind v4 – semantic names for easy use with any utility (bg-*, text-*, fill-*, border-*, etc.) */
 @theme {
+  /* Semantic palette – use as bg-primary, text-accent, fill-cream, etc. */
+  --color-primary: #2596BE;
+  --color-primary-dark: #183552;
+  --color-accent: #E16900;
+  --color-accent-yellow: #EFCA08;
+  --color-cream: #EDE5BD;
+  /* Legacy aliases (same values) for any external or non-Vue usage */
   --color-lff-blue: #2596BE;
   --color-lff-blue-dark: #183552;
   --color-lff-orange: #E16900;
@@ -38,7 +45,7 @@ body {
   font-size: 18px;
   line-height: 1.7;
   overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Wave Dividers */

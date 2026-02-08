@@ -6,21 +6,21 @@ const routes = [
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('@/pages/About.vue'),
-  // },
-  // {
-  //   path: '/attractions',
-  //   name: 'Attractions',
-  //   component: () => import('@/pages/Attractions.vue'),
-  // },
-  // {
-  //   path: '/getting-there',
-  //   name: 'GettingThere',
-  //   component: () => import('@/pages/GettingThere.vue'),
-  // },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/pages/About.vue'),
+  },
+  {
+    path: '/attractions',
+    name: 'Attractions',
+    component: () => import('@/pages/Attractions.vue'),
+  },
+  {
+    path: '/getting-there',
+    name: 'GettingThere',
+    component: () => import('@/pages/GettingThere.vue'),
+  },
   // {
   //   path: '/accommodation',
   //   name: 'Accommodation',
@@ -36,11 +36,11 @@ const routes = [
   //   name: 'Volunteers',
   //   component: () => import('@/pages/Volunteers.vue'),
   // },
-  // {
-  //   path: '/contact',
-  //   name: 'Contact',
-  //   component: () => import('@/pages/Contact.vue'),
-  // },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('@/pages/Contact.vue'),
+  },
 ]
 
 const router = createRouter({
