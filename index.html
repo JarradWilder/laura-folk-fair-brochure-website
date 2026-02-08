@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laura Folk Fair 2026 - Two Days of Fun & Entertainment | Laura SA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/index-LmlAl1kM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DIAsi47r.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Required for Facebook SDK: SDK renders widgets into fb-root -->
+    <div id="fb-root"></div>
+    <script>
+      // Facebook SDK: init when loaded so FB.XFBML.parse() can run from Vue
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          xfbml: true,
+          version: 'v24.0'
+        });
+        window.__fbSdkReady = true;
+      };
+    </script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+  </body>
+</html>
