@@ -20,8 +20,13 @@ import { execSync } from 'child_process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
-const distPath = path.join(root, 'dist')
+const distPath = path.resolve(root, 'dist')
 const worktreePath = path.join(os.tmpdir(), `gh-pages-worktree-${Date.now()}`)
+
+// Ensure we only ever copy from the dist folder (no path escape)
+if (!distPath.startsWith(root) || path.relative(root, distPath) !== 'dist') {
+  throw new Error('Deploy script: dist path must be exactly root/dist')
+}
 
 function run(cmd, opts = {}) {
   const merged = { cwd: opts.cwd || root, encoding: 'utf-8', ...opts }
@@ -79,6 +84,7 @@ try {
 
   try {
     console.log('Copying dist/ into worktree...')
+    // Only source of content: copyDir(distPath, worktreePath) below. Nothing else from root is copied.
     for (const name of fs.readdirSync(worktreePath)) {
       if (name === '.git') continue
       const entry = path.join(worktreePath, name)
