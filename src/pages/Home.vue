@@ -31,7 +31,7 @@ import images from '@/assets/images'
           value: 'Family $20 · Adults $10 · Kids $5 · Under 5 free',
           accent: true,
         },
-        { icon: 'schedule', label: 'Times', value: '10am–5pm both days' },
+        { icon: 'schedule', label: 'Times', value: 'Saturday 10am–11pm, Sunday 10am–4pm' },
         { icon: 'place', label: 'Location', value: 'Herbert St, Laura SA 5480' },
       ]"
       :columns="3"
@@ -86,13 +86,13 @@ import images from '@/assets/images'
           bgColor: 'bg-white',
         },
         {
-          imagePath: images.placeholder,
+          imagePath: images.crafts,
           title: 'Artisan stalls',
           text: 'Browse unique crafts, artwork, and local products from talented community vendors.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: images.placeholder,
+          imagePath: images.yiros,
           title: 'Food and drinks',
           text: 'Savor delicious festival favorites and sweet treats from a variety of food vendors.',
           bgColor: 'bg-white',

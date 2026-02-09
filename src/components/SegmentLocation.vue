@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-16 md:py-24">
+  <section :class="backgroundColor" class="pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-10">
         <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
@@ -52,6 +52,11 @@ const props = defineProps({
   address: {
     type: String,
     default: 'Herbert Street, Laura SA 5480',
+  },
+  /** Background color of the section */
+  backgroundColor: {
+    type: String,
+    default: 'white',
   },
 })
 

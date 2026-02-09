@@ -2,7 +2,7 @@
   <!-- reduce the top padding for mobile only -->
   <section
     class="text-white relative flex overflow-visible bg-cover bg-center"
-    :class="[segmentBgClass]"
+    :class="[segmentBgClass, variant === 'default' && 'h-[640px] md:h-[700px]']"
     :style="sectionStyle"
   >
     <!-- Teal tint overlay when using image background -->
@@ -11,7 +11,10 @@
       class="absolute inset-0 bg-primary/60 pointer-events-none z-[1]"
       aria-hidden
     />
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full"
+      :class="variant === 'default' && 'flex-1 flex flex-col justify-center py-8 md:py-12'"
+    >
       <template v-if="variant === 'home'">
         <AppImage
           :src="logoUrl"

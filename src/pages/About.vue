@@ -30,8 +30,7 @@ const missionItems = [
       title="Our Story"
       description="For over four decades, the Laura Folk Fair has been the heart of our community, bringing together families, friends, and neighbors in celebration of local culture, craftsmanship, and the enduring spirit of togetherness."
       segmentBgColor="bg-primary"
-      :image-background="images.birds_eye_view"
-      class="pt-20 md:pt-40 pb-60"
+      :image-background="images.past3"
     />
     <DividerConvexBottom fill="white" position="0" />
     <SegmentTwoColumnImageAndText

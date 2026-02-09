@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-16 md:py-24">
+  <section class="bg-white pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
         <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">
@@ -144,6 +144,7 @@ const props = defineProps({
       { value: 'General enquiry', label: 'General enquiry' },
       { value: 'Stallholder', label: 'Stallholder enquiry' },
       { value: 'Volunteering', label: 'Volunteering' },
+      { value: 'Sponsorship', label: 'Sponsorship' },
       { value: 'Other', label: 'Other' },
     ],
   },

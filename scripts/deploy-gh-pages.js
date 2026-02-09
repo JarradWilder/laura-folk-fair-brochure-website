@@ -3,10 +3,12 @@
  * Runs automatically after npm run build when on main branch.
  * Can also be run manually: npm run deploy:gh-pages
  *
- * 1. Copies dist/ to a temp folder
- * 2. Checks out gh-pages
- * 3. Replaces branch contents with the copied build
- * 4. Commits, pushes to origin, then switches back to main
+ * Uses a temporary git worktree so we never leave main or touch your
+ * working directory (node_modules, etc. stay intact).
+ *
+ * 1. Creates a temporary worktree for gh-pages
+ * 2. Copies dist/ into the worktree and commits
+ * 3. Pushes, then removes the worktree
  */
 
 import fs from 'fs'
@@ -18,10 +20,11 @@ import { execSync } from 'child_process'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
 const distPath = path.join(root, 'dist')
-const tempPath = path.join(os.tmpdir(), `dist-gh-pages-${Date.now()}`)
+const worktreePath = path.join(os.tmpdir(), `gh-pages-worktree-${Date.now()}`)
 
 function run(cmd, opts = {}) {
-  return execSync(cmd, { cwd: root, encoding: 'utf-8', ...opts })
+  const merged = { cwd: opts.cwd || root, encoding: 'utf-8', ...opts }
+  return execSync(cmd, merged)
 }
 
 function getCurrentBranch() {
@@ -68,61 +71,44 @@ try {
   }
 
   console.log('Updating gh-pages with latest build...')
-  console.log('Copying dist/ to temp...')
-  fs.mkdirSync(tempPath, { recursive: true })
-  copyDir(distPath, tempPath)
+  console.log('Creating temporary worktree for gh-pages...')
+  run(`git worktree add "${worktreePath}" gh-pages`, { stdio: 'inherit' })
 
-  const hasLocalChanges = run('git status --porcelain').trim() !== ''
-  if (hasLocalChanges) {
-    console.log('Stashing local changes so we can switch branches...')
-    run('git stash push -u -m "deploy-gh-pages"', { stdio: 'inherit' })
-  }
-
-  console.log('Checking out gh-pages...')
-  run('git checkout gh-pages', { stdio: 'inherit' })
-
-  console.log('Replacing branch contents with build...')
-  for (const name of fs.readdirSync(root)) {
-    if (name === '.git') continue
-    const entry = path.join(root, name)
-    if (fs.statSync(entry).isDirectory()) {
-      rmDir(entry)
-    } else {
-      fs.unlinkSync(entry)
-    }
-  }
-  for (const name of fs.readdirSync(tempPath)) {
-    const srcEntry = path.join(tempPath, name)
-    const destEntry = path.join(root, name)
-    if (fs.statSync(srcEntry).isDirectory()) {
-      copyDir(srcEntry, destEntry)
-    } else {
-      fs.copyFileSync(srcEntry, destEntry)
-    }
-  }
-
-  console.log('Committing...')
-  run('git add -A', { stdio: 'inherit' })
   try {
-    run('git commit -m "Update with latest build"', { stdio: 'inherit' })
-  } catch (_) {
-    console.log('Nothing to commit (build unchanged).')
-  }
+    console.log('Copying dist/ into worktree...')
+    for (const name of fs.readdirSync(worktreePath)) {
+      if (name === '.git') continue
+      const entry = path.join(worktreePath, name)
+      if (fs.statSync(entry).isDirectory()) {
+        rmDir(entry)
+      } else {
+        fs.unlinkSync(entry)
+      }
+    }
+    copyDir(distPath, worktreePath)
 
-  console.log('Pushing gh-pages to origin...')
-  run('git push origin gh-pages', { stdio: 'inherit' })
+    console.log('Committing...')
+    run('git add -A', { cwd: worktreePath, stdio: 'inherit' })
+    try {
+      run('git commit -m "Update with latest build"', { cwd: worktreePath, stdio: 'inherit' })
+    } catch (_) {
+      console.log('Nothing to commit (build unchanged).')
+    }
 
-  console.log('Switching back to main...')
-  run('git checkout main', { stdio: 'inherit' })
-
-  if (hasLocalChanges) {
-    console.log('Restoring stashed changes...')
-    run('git stash pop', { stdio: 'inherit' })
+    console.log('Pushing gh-pages to origin...')
+    run('git push origin gh-pages', { cwd: worktreePath, stdio: 'inherit' })
+  } finally {
+    console.log('Removing worktree...')
+    run(`git worktree remove --force "${worktreePath}"`, { stdio: 'inherit' })
   }
-} finally {
-  if (fs.existsSync(tempPath)) {
-    rmDir(tempPath)
+} catch (err) {
+  if (fs.existsSync(worktreePath)) {
+    try {
+      run(`git worktree remove --force "${worktreePath}"`, { stdio: 'ignore' })
+    } catch (_) {}
+    rmDir(worktreePath)
   }
+  throw err
 }
 
 console.log('Deploy complete. GitHub Pages will update shortly.')

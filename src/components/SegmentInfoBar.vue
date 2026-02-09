@@ -1,6 +1,6 @@
 <template>
   <section
-    class="pt-0 pb-12 shadow-lg -mt-px bg-cover bg-center"
+    class="pb-24 shadow-lg -mt-px bg-cover bg-center"
     :class="[bgColorClass, textClass]"
     :style="sectionStyle"
   >

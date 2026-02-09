@@ -1,6 +1,6 @@
 <template>
   <section
-    class="text-gray-900 py-16 md:py-24 bg-cover bg-center"
+    class="text-gray-900 pb-24 bg-cover bg-center"
     :class="segmentBgClass"
     :style="sectionStyle"
   >

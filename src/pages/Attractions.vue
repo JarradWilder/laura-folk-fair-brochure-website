@@ -53,13 +53,12 @@ const attractionCards = [
       description="From live music and fireworks to artisan stalls, rides, and delicious food—discover everything the Laura Folk Fair has to offer."
       segmentBgColor="bg-primary"
       :image-background="images.fair_past2"
-      class="pt-20 md:pt-40 pb-60"
     />
-    <DividerConvexBottom fill="accent-yellow" background="accent-yellow" position="100" />
+    <DividerConvexBottom fill="accent-yellow" background="accent-yellow" position="0" />
     <SegmentImageCards
       segment-bg-color="bg-accent-yellow"
       :cards="attractionCards"
-      class="py-20 md:py-25"
+      class="pb-20 md:pb-25"
     />
   </MainLayout>
 </template>
