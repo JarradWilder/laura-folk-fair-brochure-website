@@ -3,12 +3,13 @@
  * Runs automatically after npm run build when on main branch.
  * Can also be run manually: npm run deploy:gh-pages
  *
- * Uses a temporary git worktree so we never leave main or touch your
- * working directory (node_modules, etc. stay intact).
+ * - Main branch: never touched (no checkout, no deletes). node_modules stays.
+ * - gh-pages: only receives contents of dist/ (no node_modules; copy skips it).
+ * Uses a temporary git worktree so the main repo is never modified.
  *
  * 1. Creates a temporary worktree for gh-pages
- * 2. Copies dist/ into the worktree and commits
- * 3. Pushes, then removes the worktree
+ * 2. Replaces worktree contents with dist/ only (node_modules/.git never copied)
+ * 3. Commits, pushes, removes worktree
  */
 
 import fs from 'fs'
@@ -31,9 +32,11 @@ function getCurrentBranch() {
   return run('git rev-parse --abbrev-ref HEAD').trim()
 }
 
+const IGNORE_COPY = new Set(['node_modules', '.git'])
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true })
   for (const name of fs.readdirSync(src)) {
+    if (IGNORE_COPY.has(name)) continue
     const srcEntry = path.join(src, name)
     const destEntry = path.join(dest, name)
     const stat = fs.statSync(srcEntry)
