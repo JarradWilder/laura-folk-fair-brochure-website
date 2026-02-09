@@ -14,13 +14,10 @@
     role="img"
     :aria-label="placeholderAriaText"
   >
-    <img
-      :src="placeholderUrl"
-      alt=""
-      class="w-full h-full object-cover"
-      aria-hidden="true"
-    />
-    <span class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm font-medium pointer-events-none">
+    <img :src="placeholderUrl" alt="" class="w-full h-full object-cover" aria-hidden="true" />
+    <span
+      class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm font-medium pointer-events-none"
+    >
       {{ placeholderAriaText }}
     </span>
   </span>
@@ -28,7 +25,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const placeholderUrl = images.placeholder
 

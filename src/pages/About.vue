@@ -5,7 +5,7 @@ import SegmentTwoColumnImageAndText from '@/components/SegmentTwoColumnImageAndT
 import SegmentTextCards from '@/components/SegmentTextCards.vue'
 import DividerConvexBottom from '@/components/DividerConvexBottom.vue'
 import DividerConvexTop from '@/components/DividerConvexTop.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const humbleBeginnings =
   "The Laura Folk Fair was originally conceived by well known and respected local artist Richard 'Dick' Biles, who was also the founding President of the Rocky River Historic and Art Society (RRHAS) as well as teaching Art at the nearby Gladstone High School. His vision was to promote art and culture in the local area and the first event included the unveiling of the bust of author CJ Dennis, which was commissioned by the RRHAS. After the resounding success of the first event, the Laura Folk Fair saw tremendous growth and the event has since grown into one of the region's most beloved annual events, attracting visitors from far and wide."

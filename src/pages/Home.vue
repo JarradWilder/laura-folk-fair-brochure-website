@@ -7,7 +7,7 @@ import SegmentImageCards from '@/components/SegmentImageCards.vue'
 import DividerConvexBottom from '@/components/DividerConvexBottom.vue'
 import DividerConvexTop from '@/components/DividerConvexTop.vue'
 import SegmentFacebookPosts from '@/components/SegmentFacebookPosts.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 </script>
 
 <template>

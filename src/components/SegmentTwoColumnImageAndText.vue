@@ -41,7 +41,7 @@
 <script setup>
 import { computed } from 'vue'
 import AppImage from '@/components/AppImage.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const props = defineProps({
   title: {

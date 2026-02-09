@@ -113,7 +113,7 @@
 import { computed } from 'vue'
 import AppImage from '@/components/AppImage.vue'
 import { segmentColorClasses } from '@/theme/segmentColors'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const logoUrl = images.logo
 

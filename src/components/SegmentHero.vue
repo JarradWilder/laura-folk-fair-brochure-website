@@ -63,7 +63,7 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import AppImage from '@/components/AppImage.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const logoUrl = images.logo
 

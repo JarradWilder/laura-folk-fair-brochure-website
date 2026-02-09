@@ -3,7 +3,7 @@ import MainLayout from '@/layouts/MainLayout.vue'
 import SegmentHero from '@/components/SegmentHero.vue'
 import SegmentImageCards from '@/components/SegmentImageCards.vue'
 import DividerConvexBottom from '@/components/DividerConvexBottom.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const attractionCards = [
   {

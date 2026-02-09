@@ -150,7 +150,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppImage from '@/components/AppImage.vue'
-import images from '@/assets'
+import images from '@/assets/images'
 
 const logoUrl = images.logo
 const route = useRoute()
