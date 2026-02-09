@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/deploy-gh-pages.js",
     "preview": "vite preview",
+    "deploy:gh-pages": "node scripts/deploy-gh-pages.js",
     "lint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/"
   },
