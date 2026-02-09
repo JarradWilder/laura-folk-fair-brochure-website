@@ -17,7 +17,7 @@
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
       <div class="flex flex-col items-center text-center mb-10">
-        <AppImage src="/images/logo.png" alt="Laura Folk Fair Logo" class="h-40 w-40 mb-4" />
+        <AppImage :src="logoUrl" alt="Laura Folk Fair Logo" class="h-40 w-40 mb-4" />
         <p class="text-gray-400 text-sm max-w-md">
           Celebrating community, culture, and connection for over four decades.
         </p>
@@ -113,6 +113,9 @@
 import { computed } from 'vue'
 import AppImage from '@/components/AppImage.vue'
 import { segmentColorClasses } from '@/theme/segmentColors'
+import images from '@/assets'
+
+const logoUrl = images.logo
 
 const props = defineProps({
   /** Fill color for the top curve. Key from @/theme/segmentColors (e.g. 'white', 'primary-dark'). */

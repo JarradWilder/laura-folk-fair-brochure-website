@@ -11,7 +11,7 @@
               class="block h-9 w-11 md:h-[7.5rem] md:w-[7.5rem] shrink-0 flex items-center justify-center overflow-hidden"
             >
               <AppImage
-                src="/images/logo.png"
+                :src="logoUrl"
                 alt="Laura Folk Fair Logo"
                 class="h-full w-full object-contain"
               />
@@ -150,7 +150,9 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import AppImage from '@/components/AppImage.vue'
+import images from '@/assets'
 
+const logoUrl = images.logo
 const route = useRoute()
 const mobileMenuOpen = ref(false)
 

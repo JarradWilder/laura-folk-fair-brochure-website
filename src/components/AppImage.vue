@@ -15,7 +15,7 @@
     :aria-label="placeholderAriaText"
   >
     <img
-      src="/images/placeholder.jpeg"
+      :src="placeholderUrl"
       alt=""
       class="w-full h-full object-cover"
       aria-hidden="true"
@@ -28,6 +28,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import images from '@/assets'
+
+const placeholderUrl = images.placeholder
 
 const props = defineProps({
   src: {

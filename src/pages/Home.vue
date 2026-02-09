@@ -7,13 +7,14 @@ import SegmentImageCards from '@/components/SegmentImageCards.vue'
 import DividerConvexBottom from '@/components/DividerConvexBottom.vue'
 import DividerConvexTop from '@/components/DividerConvexTop.vue'
 import SegmentFacebookPosts from '@/components/SegmentFacebookPosts.vue'
+import images from '@/assets'
 </script>
 
 <template>
   <MainLayout>
     <SegmentHero
       variant="home"
-      imageBackground="/images/clouds_cirrus.jpg"
+      :image-background="images.clouds_cirrus"
       title="Welcome to the Laura Folk Fair"
       subtitle="Two days of fun & entertainment"
       description="Something for everyone!"
@@ -44,7 +45,7 @@ import SegmentFacebookPosts from '@/components/SegmentFacebookPosts.vue'
         'Join us for our annual celebration of community spirit! Two amazing days filled with local artisans, delicious food, live music, thrilling rides, and entertainment for the whole family.',
         'The Laura Folk Fair isn\'t just about having fun—it\'s a key fundraising event for the community. Many local groups, charities, and organisations use the fair to raise funds for their projects. Come along and be part of something special!',
       ]"
-      image-src="/images/fair_past2.jpg"
+      :image-src="images.fair_past2"
       image-alt="Family at town fair"
     />
 
@@ -55,7 +56,7 @@ import SegmentFacebookPosts from '@/components/SegmentFacebookPosts.vue'
         'We are grateful to Golden North for their generous support of the Laura Folk Fair. Their commitment helps make this community celebration possible year after year.',
         'Please join us in thanking our sponsor—and don\'t forget to support the businesses that support our community!',
       ]"
-      image-src="/images/golden_north_cone.jpg"
+      :image-src="images.golden_north_cone"
       image-alt="Golden North"
       :image-on-left="false"
     />
@@ -67,37 +68,37 @@ import SegmentFacebookPosts from '@/components/SegmentFacebookPosts.vue'
       class="py-60 md:py-60"
       :cards="[
         {
-          imagePath: '/images/bagpipes.jpg',
+          imagePath: images.bagpipes,
           title: 'Enjoy the music',
           text: 'Enjoy live music, performances, children\'s shows and entertainment on multiple stages throughout the fair.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: '/images/fireworks.jpg',
+          imagePath: images.fireworks,
           title: 'Fireworks are back!',
           text: 'Catch the display at a family-friendly 7pm. Explore the fair, grab a bite, enjoy the show, then stay for live music to round out the night.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: '/images/icecream_eating_comp.jpg',
+          imagePath: images.icecream_eating_comp,
           title: 'Ice cream competition',
           text: 'See who takes the crown at the Laura Folk Fair ice cream competition—local makers go head-to-head for the best cone in town.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: '/images/',
+          imagePath: images.placeholder,
           title: 'Artisan stalls',
           text: 'Browse unique crafts, artwork, and local products from talented community vendors.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: '/images/',
+          imagePath: images.placeholder,
           title: 'Food and drinks',
           text: 'Savor delicious festival favorites and sweet treats from a variety of food vendors.',
           bgColor: 'bg-white',
         },
         {
-          imagePath: '/images/show_ride.jpg',
+          imagePath: images.show_ride,
           title: 'Sideshow rides',
           text: 'Rides to excite and be enjoyed by all ages, including the little ones, plus all the sideshow faves.',
           bgColor: 'bg-white',

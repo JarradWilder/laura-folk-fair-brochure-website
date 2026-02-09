@@ -14,7 +14,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <template v-if="variant === 'home'">
         <AppImage
-          src="/images/logo.png"
+          :src="logoUrl"
           alt="Laura Folk Fair"
           class="mx-auto mb-8 h-28 w-28 md:h-80 md:w-80 object-contain"
         />
@@ -63,6 +63,9 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import AppImage from '@/components/AppImage.vue'
+import images from '@/assets'
+
+const logoUrl = images.logo
 
 const props = defineProps({
   title: {

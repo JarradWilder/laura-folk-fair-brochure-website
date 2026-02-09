@@ -41,6 +41,7 @@
 <script setup>
 import { computed } from 'vue'
 import AppImage from '@/components/AppImage.vue'
+import images from '@/assets'
 
 const props = defineProps({
   title: {
@@ -54,7 +55,7 @@ const props = defineProps({
   },
   imageSrc: {
     type: String,
-    default: '/images/birds_eye_view.jpg',
+    default: () => images.birds_eye_view,
   },
   imageAlt: {
     type: String,

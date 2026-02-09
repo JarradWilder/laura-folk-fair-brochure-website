@@ -5,6 +5,7 @@ import SegmentTwoColumnImageAndText from '@/components/SegmentTwoColumnImageAndT
 import SegmentTextCards from '@/components/SegmentTextCards.vue'
 import DividerConvexBottom from '@/components/DividerConvexBottom.vue'
 import DividerConvexTop from '@/components/DividerConvexTop.vue'
+import images from '@/assets'
 
 const humbleBeginnings =
   "The Laura Folk Fair was originally conceived by well known and respected local artist Richard 'Dick' Biles, who was also the founding President of the Rocky River Historic and Art Society (RRHAS) as well as teaching Art at the nearby Gladstone High School. His vision was to promote art and culture in the local area and the first event included the unveiling of the bust of author CJ Dennis, which was commissioned by the RRHAS. After the resounding success of the first event, the Laura Folk Fair saw tremendous growth and the event has since grown into one of the region's most beloved annual events, attracting visitors from far and wide."
@@ -29,14 +30,14 @@ const missionItems = [
       title="Our Story"
       description="For over four decades, the Laura Folk Fair has been the heart of our community, bringing together families, friends, and neighbors in celebration of local culture, craftsmanship, and the enduring spirit of togetherness."
       segmentBgColor="bg-primary"
-      imageBackground="/images/birds_eye_view.jpg"
+      :image-background="images.birds_eye_view"
       class="pt-20 md:pt-40 pb-60"
     />
     <DividerConvexBottom fill="white" position="0" />
     <SegmentTwoColumnImageAndText
       title="Humble Beginnings"
       :paragraphs="[humbleBeginnings]"
-      image-src="/images/news.jpg"
+      :image-src="images.news"
       image-alt="Richard Biles Photo"
       :image-on-left="true"
       segmentBgColor="bg-white"
@@ -45,7 +46,7 @@ const missionItems = [
     <SegmentTwoColumnImageAndText
       title="A Modern Tradition"
       :paragraphs="[modernTradition]"
-      image-src="/images/welcome_to_laura.jpg"
+      :image-src="images.welcome_to_laura"
       image-alt="Laura Folk Fair today"
       :image-on-left="false"
       segmentBgColor="bg-accent-yellow"
